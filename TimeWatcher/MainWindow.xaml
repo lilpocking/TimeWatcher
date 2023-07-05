@@ -7,10 +7,15 @@
         xmlns:view="clr-namespace:TimeWatcher.View"
         xmlns:vm="clr-namespace:TimeWatcher.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="200" Width="400" ShowActivated="False" Topmost="True" WindowStyle="None" Background="{x:Null}" OpacityMask="White" AllowsTransparency="True">
+        Title="MainWindow" Height="200" Width="400" ShowInTaskbar="False" ShowActivated="False" Topmost="True" WindowStyle="None" Background="{x:Null}" OpacityMask="White" AllowsTransparency="True">
     <Window.DataContext>
         <vm:TimerViewModel/>
     </Window.DataContext>
+    <Window.ContextMenu>
+        <ContextMenu>
+            <MenuItem Header="Close" Click="MenuCloseItem_Click"/>
+        </ContextMenu>
+    </Window.ContextMenu>
     <Grid>
         <view:Timer x:Name="TimerView" DataContext="{Binding}"/>
     </Grid>

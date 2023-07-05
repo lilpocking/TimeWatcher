@@ -27,7 +27,7 @@ namespace TimeWatcher {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        [global::System.Configuration.DefaultSettingValueAttribute("White")]
         public global::System.Drawing.Color TextColor {
             get {
                 return ((global::System.Drawing.Color)(this["TextColor"]));
@@ -39,7 +39,7 @@ namespace TimeWatcher {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("20")]
+        [global::System.Configuration.DefaultSettingValueAttribute("40")]
         public double Height {
             get {
                 return ((double)(this["Height"]));
@@ -51,7 +51,7 @@ namespace TimeWatcher {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("50")]
+        [global::System.Configuration.DefaultSettingValueAttribute("100")]
         public double Width {
             get {
                 return ((double)(this["Width"]));

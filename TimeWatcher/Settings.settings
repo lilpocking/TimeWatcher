@@ -6,10 +6,10 @@
       <Value Profile="(Default)">Black</Value>
     </Setting>
     <Setting Name="Height" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">20</Value>
+      <Value Profile="(Default)">40</Value>
     </Setting>
     <Setting Name="Width" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">50</Value>
+      <Value Profile="(Default)">100</Value>
     </Setting>
     <Setting Name="StartupLocation" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">1</Value>
