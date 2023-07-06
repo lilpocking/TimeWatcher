@@ -5,18 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TimeWatcher"
         xmlns:view="clr-namespace:TimeWatcher.View"
+        xmlns:conv="clr-namespace:TimeWatcher.Converters"
         xmlns:vm="clr-namespace:TimeWatcher.ViewModel"
         mc:Ignorable="d"
-        Title="MainWindow" Height="200" Width="400" ShowInTaskbar="False" ShowActivated="False" Topmost="True" WindowStyle="None" Background="{x:Null}" OpacityMask="White" AllowsTransparency="True">
+        Title="MainWindow" ShowInTaskbar="False" ShowActivated="False" Topmost="True" WindowStyle="None" Background="{x:Null}" OpacityMask="White" AllowsTransparency="True">
     <Window.DataContext>
         <vm:TimerViewModel/>
     </Window.DataContext>
+    <Window.Resources>
+        <conv:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+        <conv:ColorConverterToSolidColorBrush x:Key="ColorConverterToSolidColorBrush"/>
+        <conv:ColorConverter x:Key="ColorConverter"/>
+    </Window.Resources>
     <Window.ContextMenu>
         <ContextMenu>
+            <MenuItem Header="Settings" Command="{Binding OpenSettings}" CommandParameter="{Binding DataContext,RelativeSource={RelativeSource Self}}"/>
             <MenuItem Header="Close" Click="MenuCloseItem_Click"/>
         </ContextMenu>
     </Window.ContextMenu>
+    <Window.Top>
+        <Binding Path="AppSettings.StartupLocation.Top" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"/>
+    </Window.Top>
+    <Window.Left>
+        <Binding Path="AppSettings.StartupLocation.Left" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged"/>
+    </Window.Left>
+    <Window.Width>
+        <Binding Path="AppSettings.StartupLocation.Width" UpdateSourceTrigger="PropertyChanged"/>
+    </Window.Width>
+    <Window.Height>
+        <Binding Path="AppSettings.StartupLocation.Height" UpdateSourceTrigger="PropertyChanged"/>
+    </Window.Height>
     <Grid>
-        <view:Timer x:Name="TimerView" DataContext="{Binding}"/>
+        <Border CornerRadius="10" Width="Auto" Background="{Binding AppSettings.Background, Mode=TwoWay, Converter={StaticResource ColorConverterToSolidColorBrush}}" Visibility="{Binding AppSettings.IsBackgroundVisible, Converter={StaticResource BoolToVisibilityConverter}}"/>
+        <view:Timer Foreground="{Binding AppSettings.Foreground, Mode=TwoWay, Converter={StaticResource ColorConverterToSolidColorBrush}}" x:Name="TimerView" DataContext="{Binding}" Margin="2 0"/>
     </Grid>
 </Window>

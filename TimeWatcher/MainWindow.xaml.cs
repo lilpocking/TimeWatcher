@@ -1,5 +1,7 @@
 ﻿using System.Windows;
+using System.Windows.Data;
 using System.Windows.Media;
+using TimeWatcher.Internal;
 
 namespace TimeWatcher
 {
@@ -13,34 +15,14 @@ namespace TimeWatcher
             InitializeComponent();
             TimeWatcher.ViewModel.TimerViewModel timer = new TimeWatcher.ViewModel.TimerViewModel();
             timer.StartTimer.Execute(null);
-            TimerView.Foreground = new SolidColorBrush(new Color() { 
+
+            this.Foreground = new SolidColorBrush(new Color()
+            {
                 A = Settings.Default.TextColor.A,
-                R = Settings.Default.TextColor.R, 
+                R = Settings.Default.TextColor.R,
                 B = Settings.Default.TextColor.B,
                 G = Settings.Default.TextColor.G
             });
-            this.Width = Settings.Default.Width;
-            this.Height = Settings.Default.Height;
-
-            switch (Settings.Default.StartupLocation)
-            {
-                case Internal.StartupLocation.LeftTop:
-                    this.Left = 0;
-                    this.Top = 0;
-                    break;
-                case Internal.StartupLocation.RightTop:
-                    this.Left = SystemParameters.FullPrimaryScreenWidth - this.Width;
-                    this.Top = 0;
-                    break;
-                case Internal.StartupLocation.LeftBottom:
-                    this.Left = 0;
-                    this.Top = SystemParameters.PrimaryScreenHeight - this.Height;
-                    break;
-                case Internal.StartupLocation.RightBottom:
-                    this.Top = SystemParameters.PrimaryScreenHeight - this.Height;
-                    this.Left = SystemParameters.FullPrimaryScreenWidth - this.Width;
-                    break;
-            }
 
             this.DataContext = timer;
         }

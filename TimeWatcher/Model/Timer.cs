@@ -7,6 +7,7 @@ namespace TimeWatcher.Model
     public class Timer : INotifyPropertyChanged
     {
         private DateTime _time = DateTime.Now;
+        private bool _isSecondVisible = Settings.Default.IsSecondVisible;
 
         public int Hour
         {
@@ -19,6 +20,22 @@ namespace TimeWatcher.Model
         public int Second
         {
             get => _time.Second;
+        }
+        public int Millisecond
+        {
+            get => _time.Millisecond;
+        }
+
+        public bool IsSecondVisible
+        {
+            get => _isSecondVisible;
+            set
+            {
+                _isSecondVisible = value;
+                Settings.Default.IsSecondVisible = value;
+                Settings.Default.Save();
+                OnPropertyChanged();
+            }
         }
 
         public void AddSecond()

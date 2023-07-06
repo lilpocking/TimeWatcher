@@ -8,8 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-using TimeWatcher.Internal;
-
 namespace TimeWatcher {
     
     
@@ -27,7 +25,7 @@ namespace TimeWatcher {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("White")]
+        [global::System.Configuration.DefaultSettingValueAttribute("DimGray")]
         public global::System.Drawing.Color TextColor {
             get {
                 return ((global::System.Drawing.Color)(this["TextColor"]));
@@ -63,13 +61,49 @@ namespace TimeWatcher {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1")]
-        public StartupLocation StartupLocation {
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public int StartupLocation {
             get {
-                return ((StartupLocation)(this["StartupLocation"]));
+                return ((int)(this["StartupLocation"]));
             }
             set {
                 this["StartupLocation"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IsSecondVisible {
+            get {
+                return ((bool)(this["IsSecondVisible"]));
+            }
+            set {
+                this["IsSecondVisible"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool IsBackgroundVisible {
+            get {
+                return ((bool)(this["IsBackgroundVisible"]));
+            }
+            set {
+                this["IsBackgroundVisible"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("White")]
+        public global::System.Drawing.Color BackgroundColor {
+            get {
+                return ((global::System.Drawing.Color)(this["BackgroundColor"]));
+            }
+            set {
+                this["BackgroundColor"] = value;
             }
         }
     }

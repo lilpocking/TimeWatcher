@@ -1,17 +1,27 @@
 ﻿using System;
+using System.Threading.Tasks;
 using TimeWatcher.Internal;
 using TimeWatcher.Model;
+using TimeWatcher.View;
 
 namespace TimeWatcher.ViewModel
 {
     public class TimerViewModel
     {
         private Command? _startTimer = null;
-        private Timer _timer = new Timer();
+        private Command? _openSettings;
+        private TimeWatcher.Model.Timer _timer = new TimeWatcher.Model.Timer();
         private System.Windows.Threading.DispatcherTimer _dispatcherTimer = new System.Windows.Threading.DispatcherTimer();
+        private AppSettings _appSettings = new AppSettings();
 
-        public Timer Timer { 
+        public TimeWatcher.Model.Timer Timer
+        {
             get => _timer;
+        }
+        
+        public AppSettings AppSettings
+        {
+            get => _appSettings;
         }
 
         public Command StartTimer
@@ -20,6 +30,7 @@ namespace TimeWatcher.ViewModel
                 obj =>
                 {
                     _dispatcherTimer.Tick += new EventHandler(AddSecondToTimer);
+                    Task.Delay(this.Timer.Millisecond).Wait();
                     _dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
                     _dispatcherTimer.Start();
                 }
@@ -27,6 +38,21 @@ namespace TimeWatcher.ViewModel
                 );
         }
 
-        private void AddSecondToTimer(object? sender, EventArgs e) => Timer.AddSecond();
+        public Command OpenSettings
+        {
+            get => _openSettings ?? (_openSettings = new Command(
+                obj =>
+                {
+                    SettingsWindow settingsWindow = new SettingsWindow();
+                    if(obj != null)
+                    {
+                        settingsWindow.DataContext = obj;
+                    }
+                    settingsWindow.Show();
+                }
+                ));
+        }
+
+        private void AddSecondToTimer(object? sender, EventArgs e) => this.Timer.AddSecond();
     }
 }

@@ -1,0 +1,61 @@
+﻿<Window x:Class="TimeWatcher.View.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="clr-namespace:TimeWatcher.ViewModel"
+        xmlns:colorpicker="clr-namespace:ColorPicker;assembly=ColorPicker"
+        xmlns:conv="clr-namespace:TimeWatcher.Converters"
+        xmlns:local="clr-namespace:TimeWatcher.View"
+        mc:Ignorable="d"
+        Title="SettingsWindow" Height="300" Width="200" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" ShowInTaskbar="True">
+    <Window.DataContext>
+        <vm:TimerViewModel/>
+    </Window.DataContext>
+    <Window.Resources>
+        <Thickness x:Key="VerticalMargin">2, 5</Thickness>
+        <Thickness x:Key="GlobalMargin">5</Thickness>
+        <Style TargetType="colorpicker:PortableColorPicker">
+            <Setter Property="Height" Value="20"/>
+            <Setter Property="Width" Value="50"/>
+        </Style>
+        <Style TargetType="CheckBox">
+            <Setter Property="Margin" Value="{StaticResource VerticalMargin}"/>
+        </Style>
+        <conv:ColorConverter x:Key="ColorConverter"/>
+    </Window.Resources>
+    <Grid Grid.IsSharedSizeScope="True">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="100*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <GroupBox Header="Colors" Margin="{StaticResource GlobalMargin}">
+            <StackPanel Orientation="Vertical">
+                <Grid Margin="{StaticResource VerticalMargin}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" SharedSizeGroup="FontGroup"/>
+                        <ColumnDefinition Width="100*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock HorizontalAlignment="Left"  Text="Font color:"/>
+                    <colorpicker:PortableColorPicker Grid.Column="1" HorizontalAlignment="Right" SelectedColor="{Binding AppSettings.Foreground, Mode=TwoWay, Converter={StaticResource ColorConverter}}"/>
+                </Grid>
+                <Grid Margin="{StaticResource VerticalMargin}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" SharedSizeGroup="FontGroup"/>
+                        <ColumnDefinition Width="100*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock HorizontalAlignment="Left"  Text="Background color:"/>
+                    <colorpicker:PortableColorPicker Grid.Column="1" HorizontalAlignment="Right" SelectedColor="{Binding AppSettings.Background,Mode=TwoWay, Converter={StaticResource ColorConverter}}"/>
+                </Grid>
+            </StackPanel>
+        </GroupBox>
+        <GroupBox Header="Visible" Grid.Row="1" Margin="{StaticResource GlobalMargin}">
+            <StackPanel Orientation="Vertical">
+                <CheckBox IsChecked="{Binding AppSettings.IsBackgroundVisible}" Content="Is background visible"/>
+                <CheckBox IsChecked="{Binding Timer.IsSecondVisible}" Content="Is seconds visible"/>
+            </StackPanel>
+        </GroupBox>
+        <Button Grid.Row="2" Margin="{StaticResource GlobalMargin}" Content="OK" BorderThickness="0" Click="Button_Click"/>
+    </Grid>
+</Window>
