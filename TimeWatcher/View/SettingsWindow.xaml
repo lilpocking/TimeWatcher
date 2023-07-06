@@ -8,7 +8,7 @@
         xmlns:conv="clr-namespace:TimeWatcher.Converters"
         xmlns:local="clr-namespace:TimeWatcher.View"
         mc:Ignorable="d"
-        Title="SettingsWindow" Height="300" Width="200" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" ShowInTaskbar="True">
+        Title="SettingsWindow" Height="340" Width="200" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow" ShowInTaskbar="True">
     <Window.DataContext>
         <vm:TimerViewModel/>
     </Window.DataContext>
