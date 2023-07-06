@@ -26,11 +26,15 @@
     </Window.Resources>
     <Grid Grid.IsSharedSizeScope="True">
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="100*"/>
             <RowDefinition Height="100*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <GroupBox Header="Colors" Margin="{StaticResource GlobalMargin}">
+        <GroupBox Grid.Row="0" Header="General settings" Margin="{StaticResource GlobalMargin}">
+            <ComboBox Margin="{StaticResource VerticalMargin}" SelectedItem="{Binding AppSettings.StartupLocation.StartupLocation}" ItemsSource="{Binding AppSettings.StartupLocation.StartupLocations}"/>
+        </GroupBox>
+        <GroupBox Grid.Row="1" Header="Colors" Margin="{StaticResource GlobalMargin}">
             <StackPanel Orientation="Vertical">
                 <Grid Margin="{StaticResource VerticalMargin}">
                     <Grid.ColumnDefinitions>
@@ -50,12 +54,12 @@
                 </Grid>
             </StackPanel>
         </GroupBox>
-        <GroupBox Header="Visible" Grid.Row="1" Margin="{StaticResource GlobalMargin}">
+        <GroupBox Grid.Row="2" Header="Visible" Margin="{StaticResource GlobalMargin}">
             <StackPanel Orientation="Vertical">
                 <CheckBox IsChecked="{Binding AppSettings.IsBackgroundVisible}" Content="Is background visible"/>
                 <CheckBox IsChecked="{Binding Timer.IsSecondVisible}" Content="Is seconds visible"/>
             </StackPanel>
         </GroupBox>
-        <Button Grid.Row="2" Margin="{StaticResource GlobalMargin}" Content="OK" BorderThickness="0" Click="Button_Click"/>
+        <Button Grid.Row="3" Margin="{StaticResource GlobalMargin}" Content="OK" BorderThickness="0" Click="Button_Click"/>
     </Grid>
 </Window>
