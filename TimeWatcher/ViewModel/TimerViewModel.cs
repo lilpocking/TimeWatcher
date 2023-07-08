@@ -30,8 +30,8 @@ namespace TimeWatcher.ViewModel
                 obj =>
                 {
                     _dispatcherTimer.Tick += new EventHandler(AddSecondToTimer);
-                    Task.Delay(this.Timer.Millisecond).Wait();
-                    _dispatcherTimer.Interval = new TimeSpan(0, 0, 1);
+                    Task.Delay(1000-DateTime.Now.Millisecond).Wait();
+                    _dispatcherTimer.Interval = new TimeSpan(0, 0, 0,0,300);
                     _dispatcherTimer.Start();
                 }
                 )
