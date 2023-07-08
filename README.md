@@ -3,7 +3,7 @@ A simple application that is designed to be used in applications or games that a
 
 >How it look
 
-![image]([https://imgur.com/eTL59tq](https://i.imgur.com/eTL59tq.png))
+![image](https://i.imgur.com/eTL59tq.png)
 
 >Settings window
 
