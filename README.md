@@ -21,4 +21,4 @@ A simple application that is designed to be used in applications or games that a
 
 [![Video demonstration](https://img.youtube.com/vi/E2OX93tUcfE/0.jpg)](https://www.youtube.com/watch?v=E2OX93tUcfE)
 
-https://www.youtube.com/watch?v=E2OX93tUcfE
+https://i.imgur.com/O8qRmQX.mp4
