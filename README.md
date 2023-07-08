@@ -3,7 +3,7 @@ A simple application that is designed to be used in applications or games that a
 
 >How it look
 
-![image](https://github.com/lilpocking/QRCodeGenerationApplication/assets/75886599/6b67f402-b889-4b0f-8827-b8d61570e45e)
+https://imgur.com/eTL59tq
 
 >Settings window
 
