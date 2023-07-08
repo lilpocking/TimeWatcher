@@ -7,15 +7,15 @@ A simple application that is designed to be used in applications or games that a
 
 >Settings window
 
-![image](https://github.com/lilpocking/QRCodeGenerationApplication/assets/75886599/46d7234f-4399-42c2-a380-7d813d934695)
+![image](https://i.imgur.com/EZ8UXCq.png)
 
-![image](https://github.com/lilpocking/QRCodeGenerationApplication/assets/75886599/b27744d9-7eb4-408b-8555-0350e3cbb8b3)
+![image](https://i.imgur.com/YmPu0a5.png)
 
 >Change position of watch
 
-![image](https://github.com/lilpocking/QRCodeGenerationApplication/assets/75886599/99f4fe22-41d5-4e14-ace8-69b3d2418cb1)
+![image](https://i.imgur.com/reeiFZV.png)
 
-![image](https://github.com/lilpocking/QRCodeGenerationApplication/assets/75886599/f17e00ba-7a6d-4823-9d32-1a566c59cf5a)
+![image](https://i.imgur.com/UmFiKvZ.png)
 
 >Customization
 
