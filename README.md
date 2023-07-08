@@ -13,11 +13,11 @@ A simple application that is designed to be used in applications or games that a
 
 >Change position of watch
 
-![image](https://i.imgur.com/reeiFZV.png)
+![image](https://i.imgur.com/HP996AB.png)
 
 ![image](https://i.imgur.com/UmFiKvZ.png)
 
 >Customization
 
-https://github.com/lilpocking/TimeWatcher/assets/75886599/efed0d1f-d305-4e6c-8308-7762a1a6e532
+https://youtu.be/E2OX93tUcfE
 
