@@ -19,5 +19,5 @@ A simple application that is designed to be used in applications or games that a
 
 >Customization
 
-https://youtu.be/E2OX93tUcfE
+https://www.youtube.com/watch?v=E2OX93tUcfE
 
